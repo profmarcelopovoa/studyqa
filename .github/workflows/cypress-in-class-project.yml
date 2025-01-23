@@ -1,0 +1,32 @@
+name: Cypress Tests - In Class Project
+
+on:
+  push:
+    paths:
+      - 'in-class-project/**.js'
+      - 'in-class-project/**.json'
+      - 'in-class-project/**.yaml'
+    branches:
+      - main
+      - livecode
+
+jobs:
+  in-class-project-app:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependecies
+        run: npm install
+        working-directory: ./in-class-project
+
+      - name: Run Cypress Tests for app
+        run: npm run cypress:headless
+        working-directory: ./in-class-project
