@@ -8,7 +8,7 @@ on:
       - '**.yaml'
     branches:
       - main
-      - livecode
+      - master
 
 jobs:
   in-class-project-app:
@@ -23,7 +23,7 @@ jobs:
         with:
           node-version: 20
 
-      - name: Install dependecies
+      - name: Install dependencies
         run: npm install
 
       - name: Run Cypress Tests for app
