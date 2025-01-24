@@ -3,9 +3,9 @@ name: Cypress Tests - In Class Project
 on:
   push:
     paths:
-      - 'in-class-project/**.js'
-      - 'in-class-project/**.json'
-      - 'in-class-project/**.yaml'
+      - '**.js'
+      - '**.json'
+      - '**.yaml'
     branches:
       - main
       - livecode
@@ -25,8 +25,6 @@ jobs:
 
       - name: Install dependecies
         run: npm install
-        working-directory: ./in-class-project
 
       - name: Run Cypress Tests for app
         run: npm run cypress:headless
-        working-directory: ./in-class-project
