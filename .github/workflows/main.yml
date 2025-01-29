@@ -11,7 +11,7 @@ on:
       - master
 
 jobs:
-  in-class-project-app:
+  studyqa:
     runs-on: ubuntu-latest
 
     steps:
